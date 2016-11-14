@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editCaption"
+        class="com.company.crosstabemulation.web.call.CallEdit"
+        datasource="callDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.crosstabemulation.web.call">
+    <dsContext>
+        <datasource id="callDs"
+                    class="com.company.crosstabemulation.entity.Call"
+                    view="call-view"/>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="callDs">
+            <column width="250px">
+                <field id="dateOfCall"/>
+                <field id="description"/>
+                <field id="customer"/>
+                <field id="operator"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

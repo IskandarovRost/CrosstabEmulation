@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.crosstabemulation.web.operator.OperatorBrowse"
+        focusComponent="operatorsTable"
+        lookupComponent="operatorsTable"
+        messagesPack="com.company.crosstabemulation.web.operator">
+    <dsContext>
+        <collectionDatasource id="operatorsDs"
+                              class="com.company.crosstabemulation.entity.Operator"
+                              view="_local">
+            <query>
+                <![CDATA[select e from matrix$Operator e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="operatorsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="operatorsTable"
+                datasource="operatorsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="operatorsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+            </columns>
+            <rows datasource="operatorsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="operatorsTable.create"/>
+                <button id="editBtn"
+                        action="operatorsTable.edit"/>
+                <button id="removeBtn"
+                        action="operatorsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>

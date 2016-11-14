@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="com/company/crosstabemulation/screens.xml"/>
+    <screen id="matrix$Call.browse"
+            template="com/company/crosstabemulation/web/call/call-browse.xml"/>
+    <screen id="matrix$Call.edit"
+            template="com/company/crosstabemulation/web/call/call-edit.xml"/>
+    <screen id="matrix$Operator.browse"
+            template="com/company/crosstabemulation/web/operator/operator-browse.xml"/>
+    <screen id="matrix$Operator.edit"
+            template="com/company/crosstabemulation/web/operator/operator-edit.xml"/>
+</screen-config>

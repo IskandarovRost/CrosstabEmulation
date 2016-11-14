@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.company.crosstabemulation.web.call.CallBrowse"
+        focusComponent="callsTable"
+        lookupComponent="callsTable"
+        messagesPack="com.company.crosstabemulation.web.call">
+    <dsContext>
+        <collectionDatasource id="callsDs"
+                              class="com.company.crosstabemulation.entity.Call"
+                              view="call-view">
+            <query>
+                <![CDATA[select e from matrix$Call e]]>
+            </query>
+        </collectionDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="callsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="callsTable"
+                datasource="callsDs">
+            <properties include=".*"/>
+        </filter>
+        <table id="callsTable"
+               width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="dateOfCall"/>
+                <column id="description"/>
+                <column id="customer"/>
+                <column id="operator"/>
+            </columns>
+            <rows datasource="callsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="callsTable.create"/>
+                <button id="editBtn"
+                        action="callsTable.edit"/>
+                <button id="removeBtn"
+                        action="callsTable.remove"/>
+            </buttonsPanel>
+        </table>
+    </layout>
+</window>
