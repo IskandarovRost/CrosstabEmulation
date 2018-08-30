@@ -5,7 +5,9 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.chile.core.annotations.NamePattern;
+import com.haulmont.cuba.core.entity.annotation.Listeners;
 
+@Listeners("matrix_NewEntityListener")
 @NamePattern("%s|name")
 @Table(name = "MATRIX_OPERATOR")
 @Entity(name = "matrix$Operator")
